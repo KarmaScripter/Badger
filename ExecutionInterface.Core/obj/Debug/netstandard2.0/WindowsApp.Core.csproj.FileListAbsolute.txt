@@ -1,0 +1,8 @@
+C:\Users\teppler\source\projects\cs\presentation\default\WindowApp.Core\bin\Debug\netstandard2.0\WindowsApp.Core.deps.json
+C:\Users\teppler\source\projects\cs\presentation\default\WindowApp.Core\bin\Debug\netstandard2.0\WindowsApp.Core.dll
+C:\Users\teppler\source\projects\cs\presentation\default\WindowApp.Core\bin\Debug\netstandard2.0\WindowsApp.Core.pdb
+C:\Users\teppler\source\projects\cs\presentation\default\WindowApp.Core\obj\Debug\netstandard2.0\WindowsApp.Core.AssemblyInfoInputs.cache
+C:\Users\teppler\source\projects\cs\presentation\default\WindowApp.Core\obj\Debug\netstandard2.0\WindowsApp.Core.AssemblyInfo.cs
+C:\Users\teppler\source\projects\cs\presentation\default\WindowApp.Core\obj\Debug\netstandard2.0\WindowsApp.Core.csproj.CoreCompileInputs.cache
+C:\Users\teppler\source\projects\cs\presentation\default\WindowApp.Core\obj\Debug\netstandard2.0\WindowsApp.Core.dll
+C:\Users\teppler\source\projects\cs\presentation\default\WindowApp.Core\obj\Debug\netstandard2.0\WindowsApp.Core.pdb

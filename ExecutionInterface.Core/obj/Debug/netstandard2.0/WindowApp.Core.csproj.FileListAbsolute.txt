@@ -1,0 +1,10 @@
+E:\projects\cs\presentation\default\WindowApp.Core\bin\Debug\netstandard2.0\WindowApp.Core.deps.json
+E:\projects\cs\presentation\default\WindowApp.Core\bin\Debug\netstandard2.0\WindowApp.Core.dll
+E:\projects\cs\presentation\default\WindowApp.Core\bin\Debug\netstandard2.0\WindowApp.Core.pdb
+E:\projects\cs\presentation\default\WindowApp.Core\obj\Debug\netstandard2.0\WindowApp.Core.csproj.AssemblyReference.cache
+E:\projects\cs\presentation\default\WindowApp.Core\obj\Debug\netstandard2.0\WindowApp.Core.GeneratedMSBuildEditorConfig.editorconfig
+E:\projects\cs\presentation\default\WindowApp.Core\obj\Debug\netstandard2.0\WindowApp.Core.AssemblyInfoInputs.cache
+E:\projects\cs\presentation\default\WindowApp.Core\obj\Debug\netstandard2.0\WindowApp.Core.AssemblyInfo.cs
+E:\projects\cs\presentation\default\WindowApp.Core\obj\Debug\netstandard2.0\WindowApp.Core.csproj.CoreCompileInputs.cache
+E:\projects\cs\presentation\default\WindowApp.Core\obj\Debug\netstandard2.0\WindowApp.Core.dll
+E:\projects\cs\presentation\default\WindowApp.Core\obj\Debug\netstandard2.0\WindowApp.Core.pdb

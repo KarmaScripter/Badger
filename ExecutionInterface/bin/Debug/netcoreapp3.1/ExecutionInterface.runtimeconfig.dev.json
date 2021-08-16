@@ -1,0 +1,8 @@
+{
+  "runtimeOptions": {
+    "additionalProbingPaths": [
+      "C:\\Users\\teppler\\.dotnet\\store\\|arch|\\|tfm|",
+      "C:\\Users\\teppler\\.nuget\\packages"
+    ]
+  }
+}
