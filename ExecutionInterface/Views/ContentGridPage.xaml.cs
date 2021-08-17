@@ -7,20 +7,21 @@
     using System.Windows;
     using System.Windows.Controls;
     using System.Windows.Input;
-
-    using ExecutionInterface.Contracts.Services;
-    using ExecutionInterface.Contracts.Views;
-    using ExecutionInterface.Core.Contracts.Services;
-    using ExecutionInterface.Core.Models;
+    using Contracts.Services;
+    using Contracts.Views;
+    using Core.Contracts.Services;
+    using Core.Models;
 
     public partial class ContentGridPage : Page, INotifyPropertyChanged, INavigationAware
     {
         private readonly INavigationService _navigationService;
+
         private readonly ISampleDataService _sampleDataService;
 
-        public ObservableCollection<SampleOrder> Source { get; } = new ObservableCollection<SampleOrder>();
+        public ObservableCollection<SampleOrder> Source { get; } = new();
 
-        public ContentGridPage(INavigationService navigationService, ISampleDataService sampleDataService)
+        public ContentGridPage( INavigationService navigationService,
+            ISampleDataService sampleDataService )
         {
             _navigationService = navigationService;
             _sampleDataService = sampleDataService;
@@ -28,15 +29,16 @@
             DataContext = this;
         }
 
-        public async void OnNavigatedTo(object parameter)
+        public async void OnNavigatedTo( object parameter )
         {
             Source.Clear();
 
             // Replace this with your actual data
             var data = await _sampleDataService.GetContentGridDataAsync();
-            foreach (var item in data)
+
+            foreach( var item in data )
             {
-                Source.Add(item);
+                Source.Add( item );
             }
         }
 
@@ -44,40 +46,46 @@
         {
         }
 
-        private void OnPreviewMouseLeftButtonDown(object sender, MouseButtonEventArgs e)
-            => SelectItem(e);
-
-        private void OnKeyDown(object sender, KeyEventArgs e)
+        private void OnPreviewMouseLeftButtonDown( object sender, MouseButtonEventArgs e )
         {
-            if (e.Key == Key.Enter)
+            SelectItem( e );
+        }
+
+        private void OnKeyDown( object sender, KeyEventArgs e )
+        {
+            if( e.Key == Key.Enter )
             {
-                SelectItem(e);
+                SelectItem( e );
                 e.Handled = true;
             }
         }
 
-        private void SelectItem(RoutedEventArgs args)
+        private void SelectItem( RoutedEventArgs args )
         {
-            if (args.OriginalSource is FrameworkElement selectedItem
-                && selectedItem.DataContext is SampleOrder order)
+            if( args.OriginalSource is FrameworkElement selectedItem
+                && selectedItem.DataContext is SampleOrder order )
             {
-                _navigationService.NavigateTo(typeof(ContentGridDetailPage), order.OrderID);
+                _navigationService.NavigateTo( typeof( ContentGridDetailPage ), order.OrderID );
             }
         }
 
         public event PropertyChangedEventHandler PropertyChanged;
 
-        private void Set<T>(ref T storage, T value, [CallerMemberName]string propertyName = null)
+        private void Set<T>( ref T storage, T value, [ CallerMemberName ]
+            string propertyName = null )
         {
-            if (Equals(storage, value))
+            if( Equals( storage, value ) )
             {
                 return;
             }
 
             storage = value;
-            OnPropertyChanged(propertyName);
+            OnPropertyChanged( propertyName );
         }
 
-        private void OnPropertyChanged(string propertyName) => PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
+        private void OnPropertyChanged( string propertyName )
+        {
+            PropertyChanged?.Invoke( this, new PropertyChangedEventArgs( propertyName ) );
+        }
     }
 }

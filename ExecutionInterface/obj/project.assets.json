@@ -2435,9 +2435,6 @@
           "projectReferences": {
             "C:\\Users\\teppler\\source\\repos\\ExecutionInterface\\ExecutionInterface.Core\\ExecutionInterface.Core.csproj": {
               "projectPath": "C:\\Users\\teppler\\source\\repos\\ExecutionInterface\\ExecutionInterface.Core\\ExecutionInterface.Core.csproj"
-            },
-            "C:\\Users\\teppler\\source\\repos\\ExecutionInterface\\WindowApp.Core\\ExecutionInterface.Core.csproj": {
-              "projectPath": "C:\\Users\\teppler\\source\\repos\\ExecutionInterface\\WindowApp.Core\\ExecutionInterface.Core.csproj"
             }
           }
         }

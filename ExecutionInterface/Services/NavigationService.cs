@@ -1,67 +1,126 @@
-﻿namespace ExecutionInterface.Services
+﻿// <copyright file=" <File Name> .cs" company="Terry D. Eppler">
+// Copyright (c) Terry Eppler. All rights reserved.
+// </copyright>
+
+namespace ExecutionInterface.Services
 {
     using System;
     using System.Windows.Controls;
     using System.Windows.Navigation;
+    using Contracts.Services;
+    using Contracts.Views;
 
-    using ExecutionInterface.Contracts.Services;
-    using ExecutionInterface.Contracts.Views;
-
+    /// <summary>
+    /// 
+    /// </summary>
+    /// <seealso cref="ExecutionInterface.Contracts.Services.INavigationService" />
     public class NavigationService : INavigationService
     {
+        /// <summary>
+        /// The service provider
+        /// </summary>
         private readonly IServiceProvider _serviceProvider;
+
+        /// <summary>
+        /// The frame
+        /// </summary>
         private Frame _frame;
+
+        /// <summary>
+        /// The last parameter used
+        /// </summary>
         private object _lastParameterUsed;
 
+        /// <summary>
+        /// Occurs when [navigated].
+        /// </summary>
         public event EventHandler<Type> Navigated;
 
-        public bool CanGoBack => _frame.CanGoBack;
+        /// <summary>
+        /// Gets a value indicating whether this instance can go back.
+        /// </summary>
+        /// <value>
+        ///   <c>true</c> if this instance can go back; otherwise, <c>false</c>.
+        /// </value>
+        public bool CanGoBack
+        {
+            get
+            {
+                return _frame.CanGoBack;
+            }
+        }
 
-        public NavigationService(IServiceProvider serviceProvider)
+        /// <summary>
+        /// Initializes a new instance of the <see cref="NavigationService" /> class.
+        /// </summary>
+        /// <param name="serviceProvider">The service provider.</param>
+        public NavigationService( IServiceProvider serviceProvider )
         {
             _serviceProvider = serviceProvider;
         }
 
-        public void Initialize(Frame shellFrame)
+        /// <summary>
+        /// Initializes the specified shell frame.
+        /// </summary>
+        /// <param name="shellFrame">The shell frame.</param>
+        public void Initialize( Frame shellFrame )
         {
-            if (_frame == null)
+            if( _frame == null )
             {
                 _frame = shellFrame;
                 _frame.Navigated += OnNavigated;
             }
         }
 
+        /// <summary>
+        /// Unsubscribes the navigation.
+        /// </summary>
         public void UnsubscribeNavigation()
         {
             _frame.Navigated -= OnNavigated;
             _frame = null;
         }
 
+        /// <summary>
+        /// Goes the back.
+        /// </summary>
         public void GoBack()
         {
-            if (_frame.CanGoBack)
+            if( _frame.CanGoBack )
             {
                 var pageBeforeNavigation = _frame.Content;
                 _frame.GoBack();
-                if (pageBeforeNavigation is INavigationAware navigationAware)
+
+                if( pageBeforeNavigation is INavigationAware navigationAware )
                 {
                     navigationAware.OnNavigatedFrom();
                 }
             }
         }
 
-        public bool NavigateTo(Type pageType, object parameter = null, bool clearNavigation = false)
+        /// <summary>
+        /// Navigates to.
+        /// </summary>
+        /// <param name="pageType">Type of the page.</param>
+        /// <param name="parameter">The parameter.</param>
+        /// <param name="clearNavigation">if set to <c>true</c> [clear navigation].</param>
+        /// <returns></returns>
+        public bool NavigateTo( Type pageType, object parameter = null,
+            bool clearNavigation = false )
         {
-            if (_frame.Content?.GetType() != pageType || (parameter != null && !parameter.Equals(_lastParameterUsed)))
+            if( _frame.Content?.GetType() != pageType
+                || parameter?.Equals( _lastParameterUsed ) == false )
             {
                 _frame.Tag = clearNavigation;
-                var page = _serviceProvider.GetService(pageType) as Page;
+                var page = _serviceProvider.GetService( pageType ) as Page;
 
-                var navigated = _frame.Navigate(page, parameter);
-                if (navigated)
+                var navigated = _frame.Navigate( page, parameter );
+
+                if( navigated )
                 {
                     _lastParameterUsed = parameter;
-                    if (_frame.Content is INavigationAware navigationAware)
+
+                    if( _frame.Content is INavigationAware navigationAware )
                     {
                         navigationAware.OnNavigatedFrom();
                     }
@@ -73,25 +132,36 @@
             return false;
         }
 
+        /// <summary>
+        /// Cleans the navigation.
+        /// </summary>
         public void CleanNavigation()
-            => _frame.CleanNavigation();
-
-        private void OnNavigated(object sender, NavigationEventArgs e)
         {
-            if (sender is Frame frame)
+            _frame.CleanNavigation();
+        }
+
+        /// <summary>
+        /// Called when [navigated].
+        /// </summary>
+        /// <param name="sender">The sender.</param>
+        /// <param name="e">The <see cref="NavigationEventArgs" /> instance containing the event data.</param>
+        private void OnNavigated( object sender, NavigationEventArgs e )
+        {
+            if( sender is Frame frame )
             {
-                bool clearNavigation = (bool)frame.Tag;
-                if (clearNavigation)
+                var clearNavigation = (bool)frame.Tag;
+
+                if( clearNavigation )
                 {
                     frame.CleanNavigation();
                 }
 
-                if (frame.Content is INavigationAware navigationAware)
+                if( frame.Content is INavigationAware navigationAware )
                 {
-                    navigationAware.OnNavigatedTo(e.ExtraData);
+                    navigationAware.OnNavigatedTo( e.ExtraData );
                 }
 
-                Navigated?.Invoke(sender, frame.Content.GetType());
+                Navigated?.Invoke( sender, frame.Content.GetType() );
             }
         }
     }

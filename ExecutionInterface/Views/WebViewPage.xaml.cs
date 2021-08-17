@@ -5,13 +5,13 @@
     using System.Windows;
     using System.Windows.Controls;
     using Microsoft.Toolkit.Win32.UI.Controls.Interop.WinRT;
-    using ExecutionInterface.Contracts.Services;
-    using ExecutionInterface.Contracts.Views;
+    using Contracts.Services;
+    using Contracts.Views;
 
     public partial class WebViewPage : Page, INotifyPropertyChanged, INavigationAware
     {
         // TODO WTS: Set the URI of the page to show by default
-        private const string DefaultUrl = "https://docs.microsoft.com/windows/apps/";
+        private const string _defaultUrl = "https://docs.microsoft.com/windows/apps/";
 
         private readonly ISystemService _systemService;
 
@@ -94,7 +94,7 @@
         public WebViewPage( ISystemService systemService )
         {
             _systemService = systemService;
-            Source = WebViewPage.DefaultUrl;
+            Source = WebViewPage._defaultUrl;
             InitializeComponent();
             DataContext = this;
         }

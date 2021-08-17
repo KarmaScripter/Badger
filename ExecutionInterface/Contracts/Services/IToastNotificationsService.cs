@@ -4,8 +4,8 @@
 
     public interface IToastNotificationsService
     {
-        public abstract void ShowToastNotification(ToastNotification toastNotification);
+        public void ShowToastNotification( ToastNotification toastNotification );
 
-        public abstract void ShowToastNotificationSample();
+        public void ShowToastNotificationSample();
     }
 }

@@ -2,10 +2,8 @@
 {
     using System.Windows;
     using System.Windows.Controls;
-
     using MahApps.Metro.Controls;
-
-    using ExecutionInterface.Contracts.Views;
+    using Contracts.Views;
 
     public partial class ShellDialogWindow : MetroWindow, IShellDialogWindow
     {
@@ -16,9 +14,11 @@
         }
 
         public Frame GetDialogFrame()
-            => dialogFrame;
+        {
+            return dialogFrame;
+        }
 
-        private void OnCloseClick(object sender, RoutedEventArgs e)
+        private void OnCloseClick( object sender, RoutedEventArgs e )
         {
             DialogResult = true;
             Close();

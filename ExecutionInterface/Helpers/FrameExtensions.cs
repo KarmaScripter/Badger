@@ -1,10 +1,17 @@
 ﻿namespace System.Windows.Controls
 {
+    /// <summary>
+    /// 
+    /// </summary>
     public static class FrameExtensions
     {
-        public static void CleanNavigation(this Frame frame)
+        /// <summary>
+        /// Cleans the navigation.
+        /// </summary>
+        /// <param name="frame">The frame.</param>
+        public static void CleanNavigation( this Frame frame )
         {
-            while (frame.CanGoBack)
+            while( frame.CanGoBack )
             {
                 frame.RemoveBackEntry();
             }

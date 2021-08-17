@@ -4,30 +4,63 @@
     using System.Globalization;
     using System.Windows.Data;
 
+    /// <summary>
+    /// 
+    /// </summary>
+    /// <seealso cref="System.Windows.Data.IValueConverter" />
     public class EnumToBooleanConverter : IValueConverter
     {
+        /// <summary>
+        /// Gets or sets the type of the enum.
+        /// </summary>
+        /// <value>
+        /// The type of the enum.
+        /// </value>
         public Type EnumType { get; set; }
 
-        public object Convert(object value, Type targetType, object parameter, CultureInfo culture)
+        /// <summary>
+        /// Converts a value.
+        /// </summary>
+        /// <param name="value">The value produced by the binding source.</param>
+        /// <param name="targetType">The type of the binding target property.</param>
+        /// <param name="parameter">The converter parameter to use.</param>
+        /// <param name="culture">The culture to use in the converter.</param>
+        /// <returns>
+        /// A converted value. If the method returns <see langword="null" />, the valid null value is used.
+        /// </returns>
+        public object Convert( object value, Type targetType, object parameter,
+            CultureInfo culture )
         {
-            if (parameter is string enumString)
+            if( parameter is string enumString )
             {
-                if (Enum.IsDefined(EnumType, value))
+                if( value != null
+                    && Enum.IsDefined( EnumType, value ) )
                 {
-                    var enumValue = Enum.Parse(EnumType, enumString);
+                    var enumValue = Enum.Parse( EnumType, enumString );
 
-                    return enumValue.Equals(value);
+                    return enumValue.Equals( value );
                 }
             }
 
             return false;
         }
 
-        public object ConvertBack(object value, Type targetType, object parameter, CultureInfo culture)
+        /// <summary>
+        /// Converts a value.
+        /// </summary>
+        /// <param name="value">The value that is produced by the binding target.</param>
+        /// <param name="targetType">The type to convert to.</param>
+        /// <param name="parameter">The converter parameter to use.</param>
+        /// <param name="culture">The culture to use in the converter.</param>
+        /// <returns>
+        /// A converted value. If the method returns <see langword="null" />, the valid null value is used.
+        /// </returns>
+        public object ConvertBack( object value, Type targetType, object parameter,
+            CultureInfo culture )
         {
-            if (parameter is string enumString)
+            if( parameter is string enumString )
             {
-                return Enum.Parse(EnumType, enumString);
+                return Enum.Parse( EnumType, enumString );
             }
 
             return null;

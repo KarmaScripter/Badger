@@ -1,14 +1,13 @@
 ﻿namespace ExecutionInterface.Contracts.Services
 {
     using System;
-
-    using ExecutionInterface.Models;
+    using Models;
 
     public interface IThemeSelectorService
     {
         void InitializeTheme();
 
-        void SetTheme(AppTheme theme);
+        void SetTheme( AppTheme theme );
 
         AppTheme GetCurrentTheme();
     }

@@ -1,18 +1,25 @@
 ﻿namespace ExecutionInterface.Services
 {
     using Microsoft.Toolkit.Uwp.Notifications;
-
     using Windows.Data.Xml.Dom;
     using Windows.UI.Notifications;
 
+    /// <summary>
+    /// 
+    /// </summary>
+    /// <seealso cref="ExecutionInterface.Contracts.Services.IToastNotificationsService" />
     public partial class ToastNotificationsService
     {
+        /// <summary>
+        /// Shows the toast notification sample.
+        /// </summary>
         public void ShowToastNotificationSample()
         {
             // Create the toast content
             var content = new ToastContent()
             {
-                // More about the Launch property at https://docs.microsoft.com/dotnet/api/microsoft.toolkit.uwp.notifications.toastcontent
+                // More about the Launch property at
+                // https://docs.microsoft.com/dotnet/api/microsoft.toolkit.uwp.notifications.toastcontent
                 Launch = "ToastContentActivationParams",
 
                 Visual = new ToastVisual()
@@ -28,7 +35,8 @@
 
                             new AdaptiveText()
                             {
-                                 Text = @"Click OK to see how activation from a toast notification can be handled in the ToastNotificationService."
+                                Text =
+                                    @"Click OK to see how activation from a toast notification can be handled in the ToastNotificationService."
                             }
                         }
                     }
@@ -38,21 +46,23 @@
                 {
                     Buttons =
                     {
-                        // More about Toast Buttons at https://docs.microsoft.com/dotnet/api/microsoft.toolkit.uwp.notifications.toastbutton
-                        new ToastButton("OK", "ToastButtonActivationArguments")
+                        // More about Toast Buttons at
+                        // https://docs.microsoft.com/dotnet/api/microsoft.toolkit.uwp.notifications.toastbutton
+                        new ToastButton( "OK", "ToastButtonActivationArguments" )
                         {
                             ActivationType = ToastActivationType.Foreground
                         },
 
-                        new ToastButtonDismiss("Cancel")
+                        new ToastButtonDismiss( "Cancel" )
                     }
                 }
             };
 
             // Add the content to the toast
             var doc = new XmlDocument();
-            doc.LoadXml(content.GetContent());
-            var toast = new ToastNotification(doc)
+            doc.LoadXml( content.GetContent() );
+
+            var toast = new ToastNotification( doc )
             {
                 // TODO WTS: Set a unique identifier for this notification within the notification group. (optional)
                 // More details at https://docs.microsoft.com/uwp/api/windows.ui.notifications.toastnotification.tag
@@ -60,7 +70,7 @@
             };
 
             // And show the toast
-            ShowToastNotification(toast);
+            ShowToastNotification( toast );
         }
     }
 }

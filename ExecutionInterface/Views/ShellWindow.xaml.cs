@@ -7,53 +7,84 @@
     using System.Runtime.CompilerServices;
     using System.Windows;
     using System.Windows.Controls;
-
     using MahApps.Metro.Controls;
-
-    using ExecutionInterface.Contracts.Services;
-    using ExecutionInterface.Contracts.Views;
+    using Contracts.Services;
+    using Contracts.Views;
 
     public partial class ShellWindow : MetroWindow, IShellWindow, INotifyPropertyChanged
     {
         private readonly INavigationService _navigationService;
+
         private bool _canGoBack;
+
         private HamburgerMenuItem _selectedMenuItem;
+
         private HamburgerMenuItem _selectedOptionsMenuItem;
 
         public bool CanGoBack
         {
             get { return _canGoBack; }
-            set { Set(ref _canGoBack, value); }
+            set { Set( ref _canGoBack, value ); }
         }
 
         public HamburgerMenuItem SelectedMenuItem
         {
             get { return _selectedMenuItem; }
-            set { Set(ref _selectedMenuItem, value); }
+            set { Set( ref _selectedMenuItem, value ); }
         }
 
         public HamburgerMenuItem SelectedOptionsMenuItem
         {
             get { return _selectedOptionsMenuItem; }
-            set { Set(ref _selectedOptionsMenuItem, value); }
+            set { Set( ref _selectedOptionsMenuItem, value ); }
         }
 
         // TODO WTS: Change the icons and titles for all HamburgerMenuItems here.
-        public ObservableCollection<HamburgerMenuItem> MenuItems { get; } = new ObservableCollection<HamburgerMenuItem>()
+        public ObservableCollection<HamburgerMenuItem> MenuItems { get; } = new()
         {
-            new HamburgerMenuGlyphItem() { Label = Properties.Resources.ShellMainPage, Glyph = "\uE8A5", TargetPageType = typeof(MainPage) },
-            new HamburgerMenuGlyphItem() { Label = Properties.Resources.ShellWebViewPage, Glyph = "\uE8A5", TargetPageType = typeof(WebViewPage) },
-            new HamburgerMenuGlyphItem() { Label = Properties.Resources.ShellDataGridPage, Glyph = "\uE8A5", TargetPageType = typeof(DataGridPage) },
-            new HamburgerMenuGlyphItem() { Label = Properties.Resources.ShellContentGridPage, Glyph = "\uE8A5", TargetPageType = typeof(ContentGridPage) },
-            new HamburgerMenuGlyphItem() { Label = Properties.Resources.ShellListDetailsPage, Glyph = "\uE8A5", TargetPageType = typeof(ListDetailsPage) },
+            new HamburgerMenuGlyphItem()
+            {
+                Label = Properties.Resources.ShellMainPage,
+                Glyph = "\uE8A5",
+                TargetPageType = typeof( MainPage )
+            },
+            new HamburgerMenuGlyphItem()
+            {
+                Label = Properties.Resources.ShellWebViewPage,
+                Glyph = "\uE8A5",
+                TargetPageType = typeof( WebViewPage )
+            },
+            new HamburgerMenuGlyphItem()
+            {
+                Label = Properties.Resources.ShellDataGridPage,
+                Glyph = "\uE8A5",
+                TargetPageType = typeof( DataGridPage )
+            },
+            new HamburgerMenuGlyphItem()
+            {
+                Label = Properties.Resources.ShellContentGridPage,
+                Glyph = "\uE8A5",
+                TargetPageType = typeof( ContentGridPage )
+            },
+            new HamburgerMenuGlyphItem()
+            {
+                Label = Properties.Resources.ShellListDetailsPage,
+                Glyph = "\uE8A5",
+                TargetPageType = typeof( ListDetailsPage )
+            },
         };
 
-        public ObservableCollection<HamburgerMenuItem> OptionMenuItems { get; } = new ObservableCollection<HamburgerMenuItem>()
+        public ObservableCollection<HamburgerMenuItem> OptionMenuItems { get; } = new()
         {
-            new HamburgerMenuGlyphItem() { Label = Properties.Resources.ShellSettingsPage, Glyph = "\uE713", TargetPageType = typeof(SettingsPage) }
+            new HamburgerMenuGlyphItem()
+            {
+                Label = Properties.Resources.ShellSettingsPage,
+                Glyph = "\uE713",
+                TargetPageType = typeof( SettingsPage )
+            }
         };
 
-        public ShellWindow(INavigationService navigationService)
+        public ShellWindow( INavigationService navigationService )
         {
             _navigationService = navigationService;
             InitializeComponent();
@@ -61,75 +92,88 @@
         }
 
         public Frame GetNavigationFrame()
-            => shellFrame;
+        {
+            return shellFrame;
+        }
 
         public void ShowWindow()
-            => Show();
+        {
+            Show();
+        }
 
         public void CloseWindow()
-            => Close();
+        {
+            Close();
+        }
 
-        private void OnLoaded(object sender, RoutedEventArgs e)
+        private void OnLoaded( object sender, RoutedEventArgs e )
         {
             _navigationService.Navigated += OnNavigated;
         }
 
-        private void OnUnloaded(object sender, RoutedEventArgs e)
+        private void OnUnloaded( object sender, RoutedEventArgs e )
         {
             _navigationService.Navigated -= OnNavigated;
         }
 
-        private void OnItemClick(object sender, ItemClickEventArgs args)
-            => NavigateTo(SelectedMenuItem.TargetPageType);
-
-        private void OnOptionsItemClick(object sender, ItemClickEventArgs args)
-            => NavigateTo(SelectedOptionsMenuItem.TargetPageType);
-
-        private void NavigateTo(Type targetPage)
+        private void OnItemClick( object sender, ItemClickEventArgs args )
         {
-            if (targetPage != null)
+            NavigateTo( SelectedMenuItem.TargetPageType );
+        }
+
+        private void OnOptionsItemClick( object sender, ItemClickEventArgs args )
+        {
+            NavigateTo( SelectedOptionsMenuItem.TargetPageType );
+        }
+
+        private void NavigateTo( Type targetPage )
+        {
+            if( targetPage != null )
             {
-                _navigationService.NavigateTo(targetPage);
+                _navigationService.NavigateTo( targetPage );
             }
         }
 
-        private void OnNavigated(object sender, Type pageType)
+        private void OnNavigated( object sender, Type pageType )
         {
-            var item = MenuItems
-                        .OfType<HamburgerMenuItem>()
-                        .FirstOrDefault(i => pageType == i.TargetPageType);
-            if (item != null)
+            var item = MenuItems.OfType<HamburgerMenuItem>()
+                .FirstOrDefault( i => pageType == i.TargetPageType );
+
+            if( item != null )
             {
                 SelectedMenuItem = item;
             }
             else
             {
-                SelectedOptionsMenuItem = OptionMenuItems
-                        .OfType<HamburgerMenuItem>()
-                        .FirstOrDefault(i => pageType == i.TargetPageType);
+                SelectedOptionsMenuItem = OptionMenuItems.OfType<HamburgerMenuItem>()
+                    .FirstOrDefault( i => pageType == i.TargetPageType );
             }
 
             CanGoBack = _navigationService.CanGoBack;
         }
 
-        private void OnGoBack(object sender, RoutedEventArgs e)
+        private void OnGoBack( object sender, RoutedEventArgs e )
         {
             _navigationService.GoBack();
         }
 
         public event PropertyChangedEventHandler PropertyChanged;
 
-        private void Set<T>(ref T storage, T value, [CallerMemberName]string propertyName = null)
+        private void Set<T>( ref T storage, T value, [ CallerMemberName ]
+            string propertyName = null )
         {
-            if (Equals(storage, value))
+            if( Equals( storage, value ) )
             {
                 return;
             }
 
             storage = value;
-            OnPropertyChanged(propertyName);
+            OnPropertyChanged( propertyName );
         }
 
-        private void OnPropertyChanged(string propertyName) => PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
+        private void OnPropertyChanged( string propertyName )
+        {
+            PropertyChanged?.Invoke( this, new PropertyChangedEventArgs( propertyName ) );
+        }
     }
 }

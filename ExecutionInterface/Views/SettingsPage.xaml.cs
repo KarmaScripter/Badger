@@ -5,9 +5,9 @@
     using System.Windows;
     using System.Windows.Controls;
     using Microsoft.Extensions.Options;
-    using ExecutionInterface.Contracts.Services;
-    using ExecutionInterface.Contracts.Views;
-    using ExecutionInterface.Models;
+    using Contracts.Services;
+    using Contracts.Views;
+    using Models;
 
     public partial class SettingsPage : Page, INotifyPropertyChanged, INavigationAware
     {
