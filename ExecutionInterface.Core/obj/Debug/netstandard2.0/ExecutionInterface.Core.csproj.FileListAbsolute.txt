@@ -16,3 +16,13 @@ C:\Users\teppler\source\repos\ExecutionInterface\ExecutionInterface.Core\obj\Deb
 C:\Users\teppler\source\repos\ExecutionInterface\ExecutionInterface.Core\obj\Debug\netstandard2.0\ExecutionInterface.Core.csproj.CoreCompileInputs.cache
 C:\Users\teppler\source\repos\ExecutionInterface\ExecutionInterface.Core\obj\Debug\netstandard2.0\ExecutionInterface.Core.dll
 C:\Users\teppler\source\repos\ExecutionInterface\ExecutionInterface.Core\obj\Debug\netstandard2.0\ExecutionInterface.Core.pdb
+C:\Users\terry\source\repos\Badger\ExecutionInterface.Core\bin\Debug\netstandard2.0\ExecutionInterface.Core.deps.json
+C:\Users\terry\source\repos\Badger\ExecutionInterface.Core\bin\Debug\netstandard2.0\ExecutionInterface.Core.dll
+C:\Users\terry\source\repos\Badger\ExecutionInterface.Core\bin\Debug\netstandard2.0\ExecutionInterface.Core.pdb
+C:\Users\terry\source\repos\Badger\ExecutionInterface.Core\obj\Debug\netstandard2.0\ExecutionInterface.Core.csproj.AssemblyReference.cache
+C:\Users\terry\source\repos\Badger\ExecutionInterface.Core\obj\Debug\netstandard2.0\ExecutionInterface.Core.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\terry\source\repos\Badger\ExecutionInterface.Core\obj\Debug\netstandard2.0\ExecutionInterface.Core.AssemblyInfoInputs.cache
+C:\Users\terry\source\repos\Badger\ExecutionInterface.Core\obj\Debug\netstandard2.0\ExecutionInterface.Core.AssemblyInfo.cs
+C:\Users\terry\source\repos\Badger\ExecutionInterface.Core\obj\Debug\netstandard2.0\ExecutionInterface.Core.csproj.CoreCompileInputs.cache
+C:\Users\terry\source\repos\Badger\ExecutionInterface.Core\obj\Debug\netstandard2.0\ExecutionInterface.Core.dll
+C:\Users\terry\source\repos\Badger\ExecutionInterface.Core\obj\Debug\netstandard2.0\ExecutionInterface.Core.pdb

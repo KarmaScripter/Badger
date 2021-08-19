@@ -2407,34 +2407,42 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\teppler\\.nuget\\packages\\": {}
+    "C:\\Users\\terry\\.nuget\\packages\\": {},
+    "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {},
+    "C:\\Program Files (x86)\\Syncfusion\\Essential Studio\\WPF\\19.1.0.54\\ToolboxNuGetPackages": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\teppler\\source\\repos\\ExecutionInterface\\ExecutionInterface\\ExecutionInterface.csproj",
+      "projectUniqueName": "C:\\Users\\terry\\source\\repos\\Badger\\ExecutionInterface\\ExecutionInterface.csproj",
       "projectName": "ExecutionInterface",
-      "projectPath": "C:\\Users\\teppler\\source\\repos\\ExecutionInterface\\ExecutionInterface\\ExecutionInterface.csproj",
-      "packagesPath": "C:\\Users\\teppler\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\teppler\\source\\repos\\ExecutionInterface\\ExecutionInterface\\obj\\",
+      "projectPath": "C:\\Users\\terry\\source\\repos\\Badger\\ExecutionInterface\\ExecutionInterface.csproj",
+      "packagesPath": "C:\\Users\\terry\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\terry\\source\\repos\\Badger\\ExecutionInterface\\obj\\",
       "projectStyle": "PackageReference",
+      "fallbackFolders": [
+        "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages",
+        "C:\\Program Files (x86)\\Syncfusion\\Essential Studio\\WPF\\19.1.0.54\\ToolboxNuGetPackages"
+      ],
       "configFilePaths": [
-        "C:\\Users\\teppler\\AppData\\Roaming\\NuGet\\NuGet.Config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        "C:\\Users\\terry\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Syncfusion Toolbox for WPF.config"
       ],
       "originalTargetFrameworks": [
         "netcoreapp3.1"
       ],
       "sources": {
         "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-        "https://www.nuget.org/api/v2/": {}
+        "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
         "netcoreapp3.1": {
           "targetAlias": "netcoreapp3.1",
           "projectReferences": {
-            "C:\\Users\\teppler\\source\\repos\\ExecutionInterface\\ExecutionInterface.Core\\ExecutionInterface.Core.csproj": {
-              "projectPath": "C:\\Users\\teppler\\source\\repos\\ExecutionInterface\\ExecutionInterface.Core\\ExecutionInterface.Core.csproj"
+            "C:\\Users\\terry\\source\\repos\\Badger\\ExecutionInterface.Core\\ExecutionInterface.Core.csproj": {
+              "projectPath": "C:\\Users\\terry\\source\\repos\\Badger\\ExecutionInterface.Core\\ExecutionInterface.Core.csproj"
             }
           }
         }
@@ -2485,7 +2493,7 @@
             "privateAssets": "none"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.301\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.400\\RuntimeIdentifierGraph.json"
       }
     }
   }
