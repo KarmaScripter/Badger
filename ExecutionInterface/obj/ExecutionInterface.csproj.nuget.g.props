@@ -17,12 +17,9 @@
   <PropertyGroup>
     <MSBuildAllProjects>$(MSBuildAllProjects);$(MSBuildThisFileFullPath)</MSBuildAllProjects>
   </PropertyGroup>
-  <ImportGroup Condition=" '$(ExcludeRestorePackageImports)' != 'true' ">
-    <Import Project="$(NuGetPackageRoot)microsoft.windows.sdk.contracts\10.0.19041.1\build\Microsoft.Windows.SDK.Contracts.props" Condition="Exists('$(NuGetPackageRoot)microsoft.windows.sdk.contracts\10.0.19041.1\build\Microsoft.Windows.SDK.Contracts.props')" />
-  </ImportGroup>
   <PropertyGroup Condition=" '$(ExcludeRestorePackageImports)' != 'true' ">
     <PkgMicrosoft_Xaml_Behaviors_Wpf Condition=" '$(PkgMicrosoft_Xaml_Behaviors_Wpf)' == '' ">C:\Users\terry\.nuget\packages\microsoft.xaml.behaviors.wpf\1.1.19</PkgMicrosoft_Xaml_Behaviors_Wpf>
-    <PkgMicrosoft_Toolkit_Wpf_UI_Controls_WebView Condition=" '$(PkgMicrosoft_Toolkit_Wpf_UI_Controls_WebView)' == '' ">C:\Users\terry\.nuget\packages\microsoft.toolkit.wpf.ui.controls.webview\6.1.2</PkgMicrosoft_Toolkit_Wpf_UI_Controls_WebView>
+    <PkgMicrosoft_Web_WebView2 Condition=" '$(PkgMicrosoft_Web_WebView2)' == '' ">C:\Users\terry\.nuget\packages\microsoft.web.webview2\1.0.955-prerelease</PkgMicrosoft_Web_WebView2>
     <PkgMahApps_Metro Condition=" '$(PkgMahApps_Metro)' == '' ">C:\Users\terry\.nuget\packages\mahapps.metro\2.4.7</PkgMahApps_Metro>
   </PropertyGroup>
 </Project>

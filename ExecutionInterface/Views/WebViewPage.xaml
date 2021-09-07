@@ -6,7 +6,7 @@
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:properties="clr-namespace:ExecutionInterface.Properties"
-    xmlns:communityToolkit="clr-namespace:Microsoft.Toolkit.Wpf.UI.Controls;assembly=Microsoft.Toolkit.Wpf.UI.Controls.WebView"
+    xmlns:wpf = "clr-namespace:Microsoft.Web.WebView2.Wpf;assembly=Microsoft.Web.WebView2.Wpf"
     mc:Ignorable="d"
     d:DesignHeight="450" d:DesignWidth="800">
     <Page.InputBindings>
@@ -20,8 +20,8 @@
             <RowDefinition Height="*" />
             <RowDefinition Height="Auto" />
         </Grid.RowDefinitions>
-        <communityToolkit:WebView
-            x:Name="webView"
+        <wpf:WebView2
+            x:Name="webView2"
             Source="{Binding Source}"
             NavigationCompleted="OnNavigationCompleted"/>
         <Grid

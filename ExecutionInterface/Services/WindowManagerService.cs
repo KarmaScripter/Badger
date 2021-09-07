@@ -1,4 +1,8 @@
-﻿namespace ExecutionInterface.Services
+﻿// <copyright file = "WindowManagerService.cs" company = "Terry D. Eppler">
+// Copyright (c) Terry D. Eppler. All rights reserved.
+// </copyright>
+
+namespace ExecutionInterface.Services
 {
     using System;
     using System.Windows;
@@ -74,7 +78,7 @@
                 window.Show();
                 frame.Navigated += OnNavigated;
                 var page = _serviceProvider.GetService( pageType );
-                var navigated = frame.Navigate( page, parameter );
+                frame.Navigate( page, parameter );
             }
         }
 
@@ -87,12 +91,22 @@
         public bool? OpenInDialog( Type pageType, object parameter = null )
         {
             var shellWindow = _serviceProvider.GetService( typeof( IShellDialogWindow ) ) as Window;
-            var frame = ( (IShellDialogWindow)shellWindow ).GetDialogFrame();
-            frame.Navigated += OnNavigated;
-            shellWindow.Closed += OnWindowClosed;
-            var page = _serviceProvider.GetService( pageType );
-            var navigated = frame.Navigate( page, parameter );
-            return shellWindow.ShowDialog();
+            var frame = ( (IShellDialogWindow)shellWindow )?.GetDialogFrame();
+
+            if( frame != null )
+            {
+                frame.Navigated += OnNavigated;
+
+                if( shellWindow != null )
+                {
+                    shellWindow.Closed += OnWindowClosed;
+                    var page = _serviceProvider.GetService( pageType );
+                    frame.Navigate( page, parameter );
+                    return shellWindow.ShowDialog();
+                }
+            }
+
+            return null;
         }
 
         /// <summary>

@@ -127,15 +127,14 @@
             },
             "Microsoft.Toolkit.Uwp.Notifications": {
               "target": "Package",
-              "version": "[7.1.0-preview1, )"
+              "version": "[7.1.0-rc1, )"
             },
-            "Microsoft.Toolkit.Wpf.UI.Controls.WebView": {
+            "Microsoft.Web.WebView2": {
               "target": "Package",
-              "version": "[6.1.2, )"
+              "version": "[1.0.955-prerelease, )"
             }
           },
           "imports": [
-            "uap10.0.19041",
             "net461",
             "net462",
             "net47",

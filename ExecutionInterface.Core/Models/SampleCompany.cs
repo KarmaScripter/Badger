@@ -1,6 +1,9 @@
-﻿namespace ExecutionInterface.Core.Models
+﻿// <copyright file=" <File Name> .cs" company="Terry D. Eppler">
+// Copyright (c) Terry Eppler. All rights reserved.
+// </copyright>
+
+namespace ExecutionInterface.Core.Models
 {
-    using System;
     using System.Collections.Generic;
 
     // Remove this class once your pages/features are using your data.

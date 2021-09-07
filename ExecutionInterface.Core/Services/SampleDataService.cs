@@ -1,12 +1,15 @@
-﻿namespace ExecutionInterface.Core.Services
+﻿// <copyright file=" <File Name> .cs" company="Terry D. Eppler">
+// Copyright (c) Terry Eppler. All rights reserved.
+// </copyright>
+
+namespace ExecutionInterface.Core.Services
 {
     using System;
     using System.Collections.Generic;
     using System.Linq;
     using System.Threading.Tasks;
-
-    using ExecutionInterface.Core.Contracts.Services;
-    using ExecutionInterface.Core.Models;
+    using Contracts.Services;
+    using Models;
 
     // This class holds sample data used by some generated pages to show how they can be used.
     // TODO WTS: The following classes have been created to display sample data. Delete these files once your app is using real data.
@@ -24,8 +27,8 @@
         private static IEnumerable<SampleOrder> AllOrders()
         {
             // The following is order summary data
-            var companies = AllCompanies();
-            return companies.SelectMany(c => c.Orders);
+            var companies = SampleDataService.AllCompanies();
+            return companies.SelectMany( c => c.Orders );
         }
 
         private static IEnumerable<SampleCompany> AllCompanies()
@@ -48,10 +51,10 @@
                     {
                         new SampleOrder()
                         {
-                            OrderID = 10643, // Symbol Globe
-                            OrderDate = new DateTime(1997, 8, 25),
-                            RequiredDate = new DateTime(1997, 9, 22),
-                            ShippedDate = new DateTime(1997, 9, 22),
+                            OrderID = 10643,// Symbol Globe
+                            OrderDate = new DateTime( 1997, 8, 25 ),
+                            RequiredDate = new DateTime( 1997, 9, 22 ),
+                            ShippedDate = new DateTime( 1997, 9, 22 ),
                             ShipperName = "Speedy Express",
                             ShipperPhone = "(503) 555-9831",
                             Freight = 29.46,
@@ -83,7 +86,8 @@
                                     QuantityPerUnit = "750 cc per bottle",
                                     UnitPrice = 18.0,
                                     CategoryName = "Beverages",
-                                    CategoryDescription = "Soft drinks, coffees, teas, beers, and ales",
+                                    CategoryDescription =
+                                        "Soft drinks, coffees, teas, beers, and ales",
                                     Total = 283.50
                                 },
                                 new SampleOrderDetail()
@@ -102,10 +106,10 @@
                         },
                         new SampleOrder()
                         {
-                            OrderID = 10835, // Symbol Music
-                            OrderDate = new DateTime(1998, 1, 15),
-                            RequiredDate = new DateTime(1998, 2, 12),
-                            ShippedDate = new DateTime(1998, 1, 21),
+                            OrderID = 10835,// Symbol Music
+                            OrderDate = new DateTime( 1998, 1, 15 ),
+                            RequiredDate = new DateTime( 1998, 2, 12 ),
+                            ShippedDate = new DateTime( 1998, 1, 21 ),
                             ShipperName = "Federal Shipping",
                             ShipperPhone = "(503) 555-9931",
                             Freight = 69.53,
@@ -137,17 +141,18 @@
                                     QuantityPerUnit = "12 boxes",
                                     UnitPrice = 13.0,
                                     CategoryName = "Condiments",
-                                    CategoryDescription = "Sweet and savory sauces, relishes, spreads, and seasonings",
+                                    CategoryDescription =
+                                        "Sweet and savory sauces, relishes, spreads, and seasonings",
                                     Total = 20.80
                                 }
                             }
                         },
                         new SampleOrder()
                         {
-                            OrderID = 10952, // Symbol Calendar
-                            OrderDate = new DateTime(1998, 3, 16),
-                            RequiredDate = new DateTime(1998, 4, 27),
-                            ShippedDate = new DateTime(1998, 3, 24),
+                            OrderID = 10952,// Symbol Calendar
+                            OrderDate = new DateTime( 1998, 3, 16 ),
+                            RequiredDate = new DateTime( 1998, 4, 27 ),
+                            ShippedDate = new DateTime( 1998, 3, 24 ),
                             ShipperName = "Speedy Express",
                             ShipperPhone = "(503) 555-9831",
                             Freight = 40.42,
@@ -167,7 +172,8 @@
                                     QuantityPerUnit = "12 - 8 oz jars",
                                     UnitPrice = 25.0,
                                     CategoryName = "Condiments",
-                                    CategoryDescription = "Sweet and savory sauces, relishes, spreads, and seasonings",
+                                    CategoryDescription =
+                                        "Sweet and savory sauces, relishes, spreads, and seasonings",
                                     Total = 380.00
                                 },
                                 new SampleOrderDetail()
@@ -202,15 +208,16 @@
                     {
                         new SampleOrder()
                         {
-                            OrderID = 10625, // Symbol Camera
-                            OrderDate = new DateTime(1997, 8, 8),
-                            RequiredDate = new DateTime(1997, 9, 5),
-                            ShippedDate = new DateTime(1997, 8, 14),
+                            OrderID = 10625,// Symbol Camera
+                            OrderDate = new DateTime( 1997, 8, 8 ),
+                            RequiredDate = new DateTime( 1997, 9, 5 ),
+                            ShippedDate = new DateTime( 1997, 8, 14 ),
                             ShipperName = "Speedy Express",
                             ShipperPhone = "(503) 555-9831",
                             Freight = 43.90,
                             Company = "Company F",
-                            ShipTo = "Company F, Avda. de la Constitución 2222, 05021, México D.F., Mexico",
+                            ShipTo =
+                                "Company F, Avda. de la Constitución 2222, 05021, México D.F., Mexico",
                             OrderTotal = 469.75,
                             Status = "Shipped",
                             SymbolCode = 57620,
@@ -256,15 +263,16 @@
                         },
                         new SampleOrder()
                         {
-                            OrderID = 10926, // Symbol Clock
-                            OrderDate = new DateTime(1998, 3, 4),
-                            RequiredDate = new DateTime(1998, 4, 1),
-                            ShippedDate = new DateTime(1998, 3, 11),
+                            OrderID = 10926,// Symbol Clock
+                            OrderDate = new DateTime( 1998, 3, 4 ),
+                            RequiredDate = new DateTime( 1998, 4, 1 ),
+                            ShippedDate = new DateTime( 1998, 3, 11 ),
                             ShipperName = "Federal Shipping",
                             ShipperPhone = "(503) 555-9931",
                             Freight = 39.92,
                             Company = "Company F",
-                            ShipTo = "Company F, Avda. de la Constitución 2222, 05021, México D.F., Mexico",
+                            ShipTo =
+                                "Company F, Avda. de la Constitución 2222, 05021, México D.F., Mexico",
                             OrderTotal = 507.20,
                             Status = "Shipped",
                             SymbolCode = 57633,
@@ -338,10 +346,10 @@
                     {
                         new SampleOrder()
                         {
-                            OrderID = 10507, // Symbol Contact
-                            OrderDate = new DateTime(1997, 4, 15),
-                            RequiredDate = new DateTime(1997, 5, 13),
-                            ShippedDate = new DateTime(1997, 4, 22),
+                            OrderID = 10507,// Symbol Contact
+                            OrderDate = new DateTime( 1997, 4, 15 ),
+                            RequiredDate = new DateTime( 1997, 5, 13 ),
+                            ShippedDate = new DateTime( 1997, 4, 22 ),
                             ShipperName = "Speedy Express",
                             ShipperPhone = "(503) 555-9831",
                             Freight = 47.45,
@@ -361,7 +369,8 @@
                                     QuantityPerUnit = "16 - 500 g tins",
                                     UnitPrice = 46.0,
                                     CategoryName = "Beverages",
-                                    CategoryDescription = "Soft drinks, coffees, teas, beers, and ales",
+                                    CategoryDescription =
+                                        "Soft drinks, coffees, teas, beers, and ales",
                                     Total = 816.00
                                 },
                                 new SampleOrderDetail()
@@ -380,10 +389,10 @@
                         },
                         new SampleOrder()
                         {
-                            OrderID = 10573, // Symbol Star
-                            OrderDate = new DateTime(1997, 6, 19),
-                            RequiredDate = new DateTime(1997, 7, 17),
-                            ShippedDate = new DateTime(1997, 6, 20),
+                            OrderID = 10573,// Symbol Star
+                            OrderDate = new DateTime( 1997, 6, 19 ),
+                            RequiredDate = new DateTime( 1997, 7, 17 ),
+                            ShippedDate = new DateTime( 1997, 6, 20 ),
                             ShipperName = "Federal Shipping",
                             ShipperPhone = "(503) 555-9931",
                             Freight = 84.84,
@@ -415,7 +424,8 @@
                                     QuantityPerUnit = "24 - 12 oz bottles",
                                     UnitPrice = 14.0,
                                     CategoryName = "Beverages",
-                                    CategoryDescription = "Soft drinks, coffees, teas, beers, and ales",
+                                    CategoryDescription =
+                                        "Soft drinks, coffees, teas, beers, and ales",
                                     Total = 560.00
                                 },
                                 new SampleOrderDetail()
@@ -434,10 +444,10 @@
                         },
                         new SampleOrder()
                         {
-                            OrderID = 10682, // Symbol Home
-                            OrderDate = new DateTime(1997, 9, 25),
-                            RequiredDate = new DateTime(1997, 10, 23),
-                            ShippedDate = new DateTime(1997, 10, 1),
+                            OrderID = 10682,// Symbol Home
+                            OrderDate = new DateTime( 1997, 9, 25 ),
+                            RequiredDate = new DateTime( 1997, 10, 23 ),
+                            ShippedDate = new DateTime( 1997, 10, 1 ),
                             ShipperName = "United Package",
                             ShipperPhone = "(503) 555-3199",
                             Freight = 36.13,
@@ -469,7 +479,8 @@
                                     QuantityPerUnit = "24 - 8 oz jars",
                                     UnitPrice = 17.00,
                                     CategoryName = "Condiments",
-                                    CategoryDescription = "Sweet and savory sauces, relishes, spreads, and seasonings",
+                                    CategoryDescription =
+                                        "Sweet and savory sauces, relishes, spreads, and seasonings",
                                     Total = 68.00
                                 },
                                 new SampleOrderDetail()
@@ -481,7 +492,8 @@
                                     QuantityPerUnit = "24 - 0.5 l bottles",
                                     UnitPrice = 7.75,
                                     CategoryName = "Beverages",
-                                    CategoryDescription = "Soft drinks, coffees, teas, beers, and ales",
+                                    CategoryDescription =
+                                        "Soft drinks, coffees, teas, beers, and ales",
                                     Total = 232.50
                                 }
                             }
@@ -495,21 +507,21 @@
         public async Task<IEnumerable<SampleOrder>> GetGridDataAsync()
         {
             await Task.CompletedTask;
-            return AllOrders();
+            return SampleDataService.AllOrders();
         }
 
         // Remove this once your ContentGrid pages are displaying real data.
         public async Task<IEnumerable<SampleOrder>> GetContentGridDataAsync()
         {
             await Task.CompletedTask;
-            return AllOrders();
+            return SampleDataService.AllOrders();
         }
 
         // Remove this once your ListDetails pages are displaying real data.
         public async Task<IEnumerable<SampleOrder>> GetListDetailsDataAsync()
         {
             await Task.CompletedTask;
-            return AllOrders();
+            return SampleDataService.AllOrders();
         }
     }
 }

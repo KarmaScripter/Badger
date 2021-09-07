@@ -426,7 +426,7 @@
           "lib/netstandard1.0/_._": {}
         }
       },
-      "Microsoft.Toolkit.Uwp.Notifications/7.1.0-preview1": {
+      "Microsoft.Toolkit.Uwp.Notifications/7.1.0-rc1": {
         "type": "package",
         "dependencies": {
           "Microsoft.Win32.Registry": "4.7.0",
@@ -442,20 +442,35 @@
           "lib/netcoreapp3.1/Microsoft.Toolkit.Uwp.Notifications.dll": {}
         }
       },
-      "Microsoft.Toolkit.Wpf.UI.Controls.WebView/6.1.2": {
+      "Microsoft.Web.WebView2/1.0.955-prerelease": {
         "type": "package",
-        "dependencies": {
-          "Microsoft.Windows.SDK.Contracts": "10.0.18362.2005"
-        },
         "compile": {
-          "lib/netcoreapp3.0/Microsoft.Toolkit.Wpf.UI.Controls.WebView.dll": {}
+          "lib/netcoreapp3.0/Microsoft.Web.WebView2.Core.dll": {},
+          "lib/netcoreapp3.0/Microsoft.Web.WebView2.WinForms.dll": {},
+          "lib/netcoreapp3.0/Microsoft.Web.WebView2.Wpf.dll": {}
         },
         "runtime": {
-          "lib/netcoreapp3.0/Microsoft.Toolkit.Wpf.UI.Controls.WebView.dll": {}
+          "lib/netcoreapp3.0/Microsoft.Web.WebView2.Core.dll": {},
+          "lib/netcoreapp3.0/Microsoft.Web.WebView2.WinForms.dll": {},
+          "lib/netcoreapp3.0/Microsoft.Web.WebView2.Wpf.dll": {}
         },
-        "frameworkReferences": [
-          "Microsoft.WindowsDesktop.App.WPF"
-        ]
+        "build": {
+          "build/Microsoft.Web.WebView2.targets": {}
+        },
+        "runtimeTargets": {
+          "runtimes/win-arm64/native/WebView2Loader.dll": {
+            "assetType": "native",
+            "rid": "win-arm64"
+          },
+          "runtimes/win-x64/native/WebView2Loader.dll": {
+            "assetType": "native",
+            "rid": "win-x64"
+          },
+          "runtimes/win-x86/native/WebView2Loader.dll": {
+            "assetType": "native",
+            "rid": "win-x86"
+          }
+        }
       },
       "Microsoft.Win32.Registry/5.0.0": {
         "type": "package",
@@ -589,8 +604,7 @@
           "ref/netstandard2.0/Windows.WinMD": {}
         },
         "build": {
-          "build/Microsoft.Windows.SDK.Contracts.props": {},
-          "build/Microsoft.Windows.SDK.Contracts.targets": {}
+          "build/_._": {}
         }
       },
       "Microsoft.Xaml.Behaviors.Wpf/1.1.19": {
@@ -1443,10 +1457,10 @@
         "version.txt"
       ]
     },
-    "Microsoft.Toolkit.Uwp.Notifications/7.1.0-preview1": {
-      "sha512": "a+ECsMuRTl0/0QTyxVovhj4LUrO24L4h8xyFK0PjsFT2eHuc6Z07uy0sAm7QXMtSej5vtET5jPwKxFbnJFUiGQ==",
+    "Microsoft.Toolkit.Uwp.Notifications/7.1.0-rc1": {
+      "sha512": "NH74RhgqqGNcYL9E/qZtUHJN5Yc6QrH0L9e2naMPaD5YNmzJVhH7pOEl54uKFlCUR2OoeBMPXwAvLV0dZZMqPA==",
       "type": "package",
-      "path": "microsoft.toolkit.uwp.notifications/7.1.0-preview1",
+      "path": "microsoft.toolkit.uwp.notifications/7.1.0-rc1",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
@@ -1480,26 +1494,60 @@
         "lib/uap10.0.16299/Microsoft.Toolkit.Uwp.Notifications.pdb",
         "lib/uap10.0.16299/Microsoft.Toolkit.Uwp.Notifications.pri",
         "lib/uap10.0.16299/Microsoft.Toolkit.Uwp.Notifications.xml",
-        "microsoft.toolkit.uwp.notifications.7.1.0-preview1.nupkg.sha512",
+        "microsoft.toolkit.uwp.notifications.7.1.0-rc1.nupkg.sha512",
         "microsoft.toolkit.uwp.notifications.nuspec"
       ]
     },
-    "Microsoft.Toolkit.Wpf.UI.Controls.WebView/6.1.2": {
-      "sha512": "Y4fiZvQbbQkG4eC9l+Dc+LfKOG8OHnVTquVWwkHG2I3mliP4MEFWDdaz+HsmZ1E3Av+cuIJJaV30NzBN2qTWwA==",
+    "Microsoft.Web.WebView2/1.0.955-prerelease": {
+      "sha512": "yv/qFojQOQdQ+X2UXJkC+/m2f+AZYf/nX2chlq2H+57XpSGfzn3qiSrz5sfo19h5NOkvTUFxXUw8VhtsY3shCg==",
       "type": "package",
-      "path": "microsoft.toolkit.wpf.ui.controls.webview/6.1.2",
+      "path": "microsoft.web.webview2/1.0.955-prerelease",
       "hasTools": true,
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
-        "lib/net462/Microsoft.Toolkit.Wpf.UI.Controls.WebView.dll",
-        "lib/net462/Microsoft.Toolkit.Wpf.UI.Controls.WebView.pdb",
-        "lib/net462/Microsoft.Toolkit.Wpf.UI.Controls.WebView.xml",
-        "lib/netcoreapp3.0/Microsoft.Toolkit.Wpf.UI.Controls.WebView.dll",
-        "lib/netcoreapp3.0/Microsoft.Toolkit.Wpf.UI.Controls.WebView.pdb",
-        "lib/netcoreapp3.0/Microsoft.Toolkit.Wpf.UI.Controls.WebView.xml",
-        "microsoft.toolkit.wpf.ui.controls.webview.6.1.2.nupkg.sha512",
-        "microsoft.toolkit.wpf.ui.controls.webview.nuspec",
+        "LICENSE.txt",
+        "WebView2.idl",
+        "WebView2.tlb",
+        "WebView2Experimental.idl",
+        "WebView2Experimental.tlb",
+        "build/Common.targets",
+        "build/Microsoft.Web.WebView2.targets",
+        "build/native/Microsoft.Web.WebView2.targets",
+        "build/native/arm64/WebView2Loader.dll",
+        "build/native/arm64/WebView2Loader.dll.lib",
+        "build/native/arm64/WebView2LoaderStatic.lib",
+        "build/native/include/WebView2.h",
+        "build/native/include/WebView2EnvironmentOptions.h",
+        "build/native/include/WebView2Experimental.h",
+        "build/native/include/WebView2ExperimentalEnvironmentOptions.h",
+        "build/native/x64/WebView2Loader.dll",
+        "build/native/x64/WebView2Loader.dll.lib",
+        "build/native/x64/WebView2LoaderStatic.lib",
+        "build/native/x86/WebView2Loader.dll",
+        "build/native/x86/WebView2Loader.dll.lib",
+        "build/native/x86/WebView2LoaderStatic.lib",
+        "lib/Microsoft.Web.WebView2.Core.winmd",
+        "lib/net45/Microsoft.Web.WebView2.Core.dll",
+        "lib/net45/Microsoft.Web.WebView2.Core.xml",
+        "lib/net45/Microsoft.Web.WebView2.WinForms.dll",
+        "lib/net45/Microsoft.Web.WebView2.WinForms.xml",
+        "lib/net45/Microsoft.Web.WebView2.Wpf.dll",
+        "lib/net45/Microsoft.Web.WebView2.Wpf.xml",
+        "lib/netcoreapp3.0/Microsoft.Web.WebView2.Core.dll",
+        "lib/netcoreapp3.0/Microsoft.Web.WebView2.Core.xml",
+        "lib/netcoreapp3.0/Microsoft.Web.WebView2.WinForms.dll",
+        "lib/netcoreapp3.0/Microsoft.Web.WebView2.WinForms.xml",
+        "lib/netcoreapp3.0/Microsoft.Web.WebView2.Wpf.dll",
+        "lib/netcoreapp3.0/Microsoft.Web.WebView2.Wpf.xml",
+        "microsoft.web.webview2.1.0.955-prerelease.nupkg.sha512",
+        "microsoft.web.webview2.nuspec",
+        "runtimes/win-arm64/native/WebView2Loader.dll",
+        "runtimes/win-arm64/native_uap/Microsoft.Web.WebView2.Core.dll",
+        "runtimes/win-x64/native/WebView2Loader.dll",
+        "runtimes/win-x64/native_uap/Microsoft.Web.WebView2.Core.dll",
+        "runtimes/win-x86/native/WebView2Loader.dll",
+        "runtimes/win-x86/native_uap/Microsoft.Web.WebView2.Core.dll",
         "tools/VisualStudioToolsManifest.xml"
       ]
     },
@@ -2402,8 +2450,8 @@
       "ExecutionInterface.Core >= 1.0.0",
       "MahApps.Metro >= 2.4.7",
       "Microsoft.Extensions.Hosting >= 6.0.0-preview.7.21377.19",
-      "Microsoft.Toolkit.Uwp.Notifications >= 7.1.0-preview1",
-      "Microsoft.Toolkit.Wpf.UI.Controls.WebView >= 6.1.2"
+      "Microsoft.Toolkit.Uwp.Notifications >= 7.1.0-rc1",
+      "Microsoft.Web.WebView2 >= 1.0.955-prerelease"
     ]
   },
   "packageFolders": {
@@ -2467,15 +2515,14 @@
           },
           "Microsoft.Toolkit.Uwp.Notifications": {
             "target": "Package",
-            "version": "[7.1.0-preview1, )"
+            "version": "[7.1.0-rc1, )"
           },
-          "Microsoft.Toolkit.Wpf.UI.Controls.WebView": {
+          "Microsoft.Web.WebView2": {
             "target": "Package",
-            "version": "[6.1.2, )"
+            "version": "[1.0.955-prerelease, )"
           }
         },
         "imports": [
-          "uap10.0.19041",
           "net461",
           "net462",
           "net47",

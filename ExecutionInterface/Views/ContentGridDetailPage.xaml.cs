@@ -1,6 +1,9 @@
-﻿namespace ExecutionInterface.Views
+﻿// <copyright file = "ContentGridDetailPage.xaml.cs" company = "Terry D. Eppler">
+// Copyright (c) Terry D. Eppler. All rights reserved.
+// </copyright>
+
+namespace ExecutionInterface.Views
 {
-    using System;
     using System.ComponentModel;
     using System.Linq;
     using System.Runtime.CompilerServices;
@@ -43,8 +46,7 @@
 
         public event PropertyChangedEventHandler PropertyChanged;
 
-        private void Set<T>( ref T storage, T value, [ CallerMemberName ]
-            string propertyName = null )
+        private void Set<T>( ref T storage, T value, [ CallerMemberName ] string propertyName = null )
         {
             if( Equals( storage, value ) )
             {

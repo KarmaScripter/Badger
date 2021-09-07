@@ -1,4 +1,8 @@
-﻿namespace ExecutionInterface.Views
+﻿// <copyright file = "SettingsPage.xaml.cs" company = "Terry D. Eppler">
+// Copyright (c) Terry D. Eppler. All rights reserved.
+// </copyright>
+
+namespace ExecutionInterface.Views
 {
     using System.ComponentModel;
     using System.Runtime.CompilerServices;
@@ -37,9 +41,8 @@
             set { Set( ref _versionDescription, value ); }
         }
 
-        public SettingsPage( IOptions<AppConfig> appConfig,
-            IThemeSelectorService themeSelectorService, ISystemService systemService,
-            IApplicationInfoService applicationInfoService )
+        public SettingsPage( IOptions<AppConfig> appConfig, IThemeSelectorService themeSelectorService,
+            ISystemService systemService, IApplicationInfoService applicationInfoService )
         {
             _appConfig = appConfig.Value;
             _themeSelectorService = themeSelectorService;
@@ -93,8 +96,7 @@
 
         public event PropertyChangedEventHandler PropertyChanged;
 
-        private void Set<T>( ref T storage, T value, [ CallerMemberName ]
-            string propertyName = null )
+        private void Set<T>( ref T storage, T value, [ CallerMemberName ] string propertyName = null )
         {
             if( Equals( storage, value ) )
             {

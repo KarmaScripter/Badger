@@ -1,4 +1,8 @@
-﻿namespace ExecutionInterface.Core.Models
+﻿// <copyright file=" <File Name> .cs" company="Terry D. Eppler">
+// Copyright (c) Terry Eppler. All rights reserved.
+// </copyright>
+
+namespace ExecutionInterface.Core.Models
 {
     using System;
     using System.Collections.Generic;
@@ -30,7 +34,13 @@
 
         public string Status { get; set; }
 
-        public char Symbol => (char)SymbolCode;
+        public char Symbol
+        {
+            get
+            {
+                return (char)SymbolCode;
+            }
+        }
 
         public int SymbolCode { get; set; }
 
@@ -41,6 +51,12 @@
             return $"{Company} {Status}";
         }
 
-        public string ShortDescription => $"Order ID: {OrderID}";
+        public string ShortDescription
+        {
+            get
+            {
+                return $"Order ID: {OrderID}";
+            }
+        }
     }
 }

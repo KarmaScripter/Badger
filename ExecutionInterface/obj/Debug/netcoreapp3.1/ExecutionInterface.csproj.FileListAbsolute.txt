@@ -192,6 +192,7 @@ C:\Users\teppler\source\repos\ExecutionInterface\ExecutionInterface\obj\Debug\ne
 C:\Users\teppler\source\repos\ExecutionInterface\ExecutionInterface\obj\Debug\netcoreapp3.1\ExecutionInterface.dll
 C:\Users\teppler\source\repos\ExecutionInterface\ExecutionInterface\obj\Debug\netcoreapp3.1\ExecutionInterface.pdb
 C:\Users\teppler\source\repos\ExecutionInterface\ExecutionInterface\obj\Debug\netcoreapp3.1\ExecutionInterface.genruntimeconfig.cache
+C:\Users\terry\source\repos\Badger\ExecutionInterface\bin\Debug\netcoreapp3.1\runtimes\win-x64\native\WebView2Loader.dll
 C:\Users\terry\source\repos\Badger\ExecutionInterface\bin\Debug\netcoreapp3.1\ExecutionInterface.exe
 C:\Users\terry\source\repos\Badger\ExecutionInterface\bin\Debug\netcoreapp3.1\appsettings.json
 C:\Users\terry\source\repos\Badger\ExecutionInterface\bin\Debug\netcoreapp3.1\ExecutionInterface.deps.json
@@ -227,7 +228,9 @@ C:\Users\terry\source\repos\Badger\ExecutionInterface\bin\Debug\netcoreapp3.1\Mi
 C:\Users\terry\source\repos\Badger\ExecutionInterface\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Options.ConfigurationExtensions.dll
 C:\Users\terry\source\repos\Badger\ExecutionInterface\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Primitives.dll
 C:\Users\terry\source\repos\Badger\ExecutionInterface\bin\Debug\netcoreapp3.1\Microsoft.Toolkit.Uwp.Notifications.dll
-C:\Users\terry\source\repos\Badger\ExecutionInterface\bin\Debug\netcoreapp3.1\Microsoft.Toolkit.Wpf.UI.Controls.WebView.dll
+C:\Users\terry\source\repos\Badger\ExecutionInterface\bin\Debug\netcoreapp3.1\Microsoft.Web.WebView2.Core.dll
+C:\Users\terry\source\repos\Badger\ExecutionInterface\bin\Debug\netcoreapp3.1\Microsoft.Web.WebView2.WinForms.dll
+C:\Users\terry\source\repos\Badger\ExecutionInterface\bin\Debug\netcoreapp3.1\Microsoft.Web.WebView2.Wpf.dll
 C:\Users\terry\source\repos\Badger\ExecutionInterface\bin\Debug\netcoreapp3.1\Microsoft.Win32.Registry.dll
 C:\Users\terry\source\repos\Badger\ExecutionInterface\bin\Debug\netcoreapp3.1\Microsoft.Xaml.Behaviors.dll
 C:\Users\terry\source\repos\Badger\ExecutionInterface\bin\Debug\netcoreapp3.1\Newtonsoft.Json.dll
@@ -239,6 +242,8 @@ C:\Users\terry\source\repos\Badger\ExecutionInterface\bin\Debug\netcoreapp3.1\Sy
 C:\Users\terry\source\repos\Badger\ExecutionInterface\bin\Debug\netcoreapp3.1\System.Text.Encodings.Web.dll
 C:\Users\terry\source\repos\Badger\ExecutionInterface\bin\Debug\netcoreapp3.1\System.Text.Json.dll
 C:\Users\terry\source\repos\Badger\ExecutionInterface\bin\Debug\netcoreapp3.1\de\MahApps.Metro.resources.dll
+C:\Users\terry\source\repos\Badger\ExecutionInterface\bin\Debug\netcoreapp3.1\runtimes\win-arm64\native\WebView2Loader.dll
+C:\Users\terry\source\repos\Badger\ExecutionInterface\bin\Debug\netcoreapp3.1\runtimes\win-x86\native\WebView2Loader.dll
 C:\Users\terry\source\repos\Badger\ExecutionInterface\bin\Debug\netcoreapp3.1\runtimes\win\lib\netstandard2.0\Microsoft.Win32.Registry.dll
 C:\Users\terry\source\repos\Badger\ExecutionInterface\bin\Debug\netcoreapp3.1\runtimes\win\lib\netcoreapp3.1\System.Diagnostics.EventLog.Messages.dll
 C:\Users\terry\source\repos\Badger\ExecutionInterface\bin\Debug\netcoreapp3.1\runtimes\win\lib\netcoreapp3.1\System.Diagnostics.EventLog.dll
@@ -269,6 +274,7 @@ C:\Users\terry\source\repos\Badger\ExecutionInterface\obj\Debug\netcoreapp3.1\Vi
 C:\Users\terry\source\repos\Badger\ExecutionInterface\obj\Debug\netcoreapp3.1\Views\ShellWindow.g.cs
 C:\Users\terry\source\repos\Badger\ExecutionInterface\obj\Debug\netcoreapp3.1\Views\WebViewPage.g.cs
 C:\Users\terry\source\repos\Badger\ExecutionInterface\obj\Debug\netcoreapp3.1\App.g.cs
+C:\Users\terry\source\repos\Badger\ExecutionInterface\obj\Debug\netcoreapp3.1\ExecutionInterface_Content.g.cs
 C:\Users\terry\source\repos\Badger\ExecutionInterface\obj\Debug\netcoreapp3.1\GeneratedInternalTypeHelper.g.cs
 C:\Users\terry\source\repos\Badger\ExecutionInterface\obj\Debug\netcoreapp3.1\ExecutionInterface_MarkupCompile.cache
 C:\Users\terry\source\repos\Badger\ExecutionInterface\obj\Debug\netcoreapp3.1\ExecutionInterface_MarkupCompile.lref

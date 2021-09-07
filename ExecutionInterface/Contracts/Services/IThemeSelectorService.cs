@@ -1,6 +1,5 @@
 ﻿namespace ExecutionInterface.Contracts.Services
 {
-    using System;
     using Models;
 
     public interface IThemeSelectorService

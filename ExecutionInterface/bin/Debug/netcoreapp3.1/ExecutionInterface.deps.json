@@ -11,8 +11,8 @@
           "ExecutionInterface.Core": "1.0.0",
           "MahApps.Metro": "2.4.7",
           "Microsoft.Extensions.Hosting": "6.0.0-preview.7.21377.19",
-          "Microsoft.Toolkit.Uwp.Notifications": "7.1.0-preview1",
-          "Microsoft.Toolkit.Wpf.UI.Controls.WebView": "6.1.2"
+          "Microsoft.Toolkit.Uwp.Notifications": "7.1.0-rc1",
+          "Microsoft.Web.WebView2": "1.0.955-prerelease"
         },
         "runtime": {
           "ExecutionInterface.dll": {}
@@ -389,7 +389,7 @@
         }
       },
       "Microsoft.NETCore.Platforms/5.0.0": {},
-      "Microsoft.Toolkit.Uwp.Notifications/7.1.0-preview1": {
+      "Microsoft.Toolkit.Uwp.Notifications/7.1.0-rc1": {
         "dependencies": {
           "Microsoft.Win32.Registry": "5.0.0",
           "Microsoft.Windows.SDK.Contracts": "10.0.19041.1",
@@ -404,14 +404,36 @@
           }
         }
       },
-      "Microsoft.Toolkit.Wpf.UI.Controls.WebView/6.1.2": {
-        "dependencies": {
-          "Microsoft.Windows.SDK.Contracts": "10.0.19041.1"
-        },
+      "Microsoft.Web.WebView2/1.0.955-prerelease": {
         "runtime": {
-          "lib/netcoreapp3.0/Microsoft.Toolkit.Wpf.UI.Controls.WebView.dll": {
-            "assemblyVersion": "6.1.0.0",
-            "fileVersion": "6.1.2.13"
+          "lib/netcoreapp3.0/Microsoft.Web.WebView2.Core.dll": {
+            "assemblyVersion": "1.0.955.0",
+            "fileVersion": "1.0.955.0"
+          },
+          "lib/netcoreapp3.0/Microsoft.Web.WebView2.WinForms.dll": {
+            "assemblyVersion": "1.0.955.0",
+            "fileVersion": "1.0.955.0"
+          },
+          "lib/netcoreapp3.0/Microsoft.Web.WebView2.Wpf.dll": {
+            "assemblyVersion": "1.0.955.0",
+            "fileVersion": "1.0.955.0"
+          }
+        },
+        "runtimeTargets": {
+          "runtimes/win-arm64/native/WebView2Loader.dll": {
+            "rid": "win-arm64",
+            "assetType": "native",
+            "fileVersion": "1.0.955.0"
+          },
+          "runtimes/win-x64/native/WebView2Loader.dll": {
+            "rid": "win-x64",
+            "assetType": "native",
+            "fileVersion": "1.0.955.0"
+          },
+          "runtimes/win-x86/native/WebView2Loader.dll": {
+            "rid": "win-x86",
+            "assetType": "native",
+            "fileVersion": "1.0.955.0"
           }
         }
       },
@@ -805,19 +827,19 @@
       "path": "microsoft.netcore.platforms/5.0.0",
       "hashPath": "microsoft.netcore.platforms.5.0.0.nupkg.sha512"
     },
-    "Microsoft.Toolkit.Uwp.Notifications/7.1.0-preview1": {
+    "Microsoft.Toolkit.Uwp.Notifications/7.1.0-rc1": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-a+ECsMuRTl0/0QTyxVovhj4LUrO24L4h8xyFK0PjsFT2eHuc6Z07uy0sAm7QXMtSej5vtET5jPwKxFbnJFUiGQ==",
-      "path": "microsoft.toolkit.uwp.notifications/7.1.0-preview1",
-      "hashPath": "microsoft.toolkit.uwp.notifications.7.1.0-preview1.nupkg.sha512"
+      "sha512": "sha512-NH74RhgqqGNcYL9E/qZtUHJN5Yc6QrH0L9e2naMPaD5YNmzJVhH7pOEl54uKFlCUR2OoeBMPXwAvLV0dZZMqPA==",
+      "path": "microsoft.toolkit.uwp.notifications/7.1.0-rc1",
+      "hashPath": "microsoft.toolkit.uwp.notifications.7.1.0-rc1.nupkg.sha512"
     },
-    "Microsoft.Toolkit.Wpf.UI.Controls.WebView/6.1.2": {
+    "Microsoft.Web.WebView2/1.0.955-prerelease": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-Y4fiZvQbbQkG4eC9l+Dc+LfKOG8OHnVTquVWwkHG2I3mliP4MEFWDdaz+HsmZ1E3Av+cuIJJaV30NzBN2qTWwA==",
-      "path": "microsoft.toolkit.wpf.ui.controls.webview/6.1.2",
-      "hashPath": "microsoft.toolkit.wpf.ui.controls.webview.6.1.2.nupkg.sha512"
+      "sha512": "sha512-yv/qFojQOQdQ+X2UXJkC+/m2f+AZYf/nX2chlq2H+57XpSGfzn3qiSrz5sfo19h5NOkvTUFxXUw8VhtsY3shCg==",
+      "path": "microsoft.web.webview2/1.0.955-prerelease",
+      "hashPath": "microsoft.web.webview2.1.0.955-prerelease.nupkg.sha512"
     },
     "Microsoft.Win32.Registry/5.0.0": {
       "type": "package",

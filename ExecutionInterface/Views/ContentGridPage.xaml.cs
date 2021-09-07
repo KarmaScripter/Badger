@@ -1,6 +1,9 @@
-﻿namespace ExecutionInterface.Views
+﻿// <copyright file = "ContentGridPage.xaml.cs" company = "Terry D. Eppler">
+// Copyright (c) Terry D. Eppler. All rights reserved.
+// </copyright>
+
+namespace ExecutionInterface.Views
 {
-    using System;
     using System.Collections.ObjectModel;
     using System.ComponentModel;
     using System.Runtime.CompilerServices;
@@ -20,8 +23,7 @@
 
         public ObservableCollection<SampleOrder> Source { get; } = new();
 
-        public ContentGridPage( INavigationService navigationService,
-            ISampleDataService sampleDataService )
+        public ContentGridPage( INavigationService navigationService, ISampleDataService sampleDataService )
         {
             _navigationService = navigationService;
             _sampleDataService = sampleDataService;
@@ -71,8 +73,7 @@
 
         public event PropertyChangedEventHandler PropertyChanged;
 
-        private void Set<T>( ref T storage, T value, [ CallerMemberName ]
-            string propertyName = null )
+        private void Set<T>( ref T storage, T value, [ CallerMemberName ] string propertyName = null )
         {
             if( Equals( storage, value ) )
             {

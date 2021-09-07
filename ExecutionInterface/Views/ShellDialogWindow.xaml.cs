@@ -1,4 +1,8 @@
-﻿namespace ExecutionInterface.Views
+﻿// <copyright file = "ShellDialogWindow.xaml.cs" company = "Terry D. Eppler">
+// Copyright (c) Terry D. Eppler. All rights reserved.
+// </copyright>
+
+namespace ExecutionInterface.Views
 {
     using System.Windows;
     using System.Windows.Controls;

@@ -1,4 +1,8 @@
-﻿namespace ExecutionInterface.Models
+﻿// <copyright file = "AppTheme.cs" company = "Terry D. Eppler">
+// Copyright (c) Terry D. Eppler. All rights reserved.
+// </copyright>
+
+namespace ExecutionInterface.Models
 {
     /// <summary>
     /// 
